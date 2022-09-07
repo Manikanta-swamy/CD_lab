@@ -1,0 +1,67 @@
+#include<stdio.h>
+
+#include<string.h>
+
+#include<stdbool.h>
+
+#include<stdlib.h>a
+
+bool validDelimiter(char ch)
+
+{
+
+    if( ch==' ' || ch == '+' || ch=='-' || ch=='*' || ch=='/' || ch==',' || ch==';' || ch=='>' || ch=='<' || ch == '=' || ch=='(' || ch==')' || ch=='[' || ch==']' || ch=='{' || ch=='}' )
+
+      return true;
+
+      return false;
+
+}
+
+void detectTokens(char *str)
+
+{
+
+    int start=0;
+
+    int length = strlen(str);
+
+    
+
+    while(start<=length)
+
+    {
+
+    if(validDelimiter(str[start])==true)
+
+    {
+
+        printf(" \" %c \" \t",str[start]);
+
+    }
+
+     start++;
+
+    }
+
+    
+
+}
+
+void main()
+
+{
+
+    char str[100] ;
+
+    printf("enter a string: \n");
+
+    gets(str);
+
+    printf("the program is %s \n",str);
+
+    printf(" the tokens are : \n");
+
+    detectTokens(str);
+
+}
